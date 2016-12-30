@@ -1,5 +1,5 @@
 class MergeSort
-  def self.sort(array)
+  def sort(array)
     return array if array.size <= 1
 
     middle = array.size / 2
@@ -11,7 +11,7 @@ class MergeSort
 
   private
 
-  def self.merge(a, b)
+  def merge(a, b)
     sorted = []
     until a.empty? || b.empty?
       sorted << ((a[0] < b[0]) ? a.shift : b.shift)

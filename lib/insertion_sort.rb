@@ -1,5 +1,5 @@
 class InsertionSort
-  def self.sort(array)
+  def sort(array)
     array.each_with_index do |item, index|
       i = index - 1 
             

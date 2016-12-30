@@ -1,5 +1,5 @@
 class BubbleSort
-  def self.sort(array)
+  def sort(array)
     swapped = true
 
     while swapped

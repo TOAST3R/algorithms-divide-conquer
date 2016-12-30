@@ -1,5 +1,5 @@
 class SelectionSort
-  def self.sort(array)
+  def sort(array)
     sorted_array = []
 
     array.size.times do |i|
