@@ -28,7 +28,7 @@ if __FILE__ == $0
   puts
 
   200.times do |n|
-    array = rand(1..10**(n+1)).to_s.split("")
+    array = rand(10**n..10**(n+1)).to_s.split("")
     array_size = array.to_s.length
     
     merge_sort_times     << (Benchmark.realtime { merge_sort.sort array } * 1000).round(5)
