@@ -21,6 +21,8 @@ To compare the 4 algorithms benchmarking execute:
 
 This also will generate an image `sorting_algorithms.png`
 
+![alt tag](https://github.com/TOAST3R/sorting_algorithms/blob/master/sorting_algorithms.png)
+
 ## Asymptotic Analysis
 
 Suppress constant factors and lower-order terms
