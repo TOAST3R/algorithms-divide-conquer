@@ -19,7 +19,7 @@ To compare the 4 algorithms benchmarking execute:
 
 `ruby sorting_arrays_benchmark.rb`
 
-This also will generate an image `sorting_algorithms.png`
+This also will generate a graphic `sorting_algorithms.png`
 
 ![alt tag](https://github.com/TOAST3R/sorting_algorithms/blob/master/sorting_algorithms.png)
 

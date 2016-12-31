@@ -27,8 +27,11 @@ if __FILE__ == $0
   printf "%-20s", "Digit length"
   puts
 
-  200.times do |n|
-    array = rand(10**n..10**(n+1)).to_s.split("")
+  100.times do |n|
+    array = []
+    (10 * n).times do |i|
+      array << rand(1..n**3)
+    end
     array_size = array.to_s.length
     
     merge_sort_times     << (Benchmark.realtime { merge_sort.sort array } * 1000).round(5)
