@@ -1,9 +1,9 @@
 class CountInversions
-  def sort_count_inversion(array)
+  def sort_and_count(array)
     return array, 0 unless array.size > 1
     
-    left, x   = sort_count_inversion(array.take(array.size / 2))
-    right, y  = sort_count_inversion(array.drop(array.size / 2))
+    left, x   = sort_and_count(array.take(array.size / 2))
+    right, y  = sort_and_count(array.drop(array.size / 2))
     sorted, z = merge_count_split_inversion(left, right)
     
     return sorted, x + y + z

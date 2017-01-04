@@ -55,10 +55,10 @@ left:       i,j < =n/2 ∀ inversions C(i,j) (with i < j)
 right:      i,j > n/2  ∀ inversions C(i,j) (with i < j)  
 split:   i <= n/2 <= j ∀ inversions C(i,j) (with i < j)  
 
-| Algorithm                    | time complexity | Implementation                                  |
-| ---------------------------- |:---------------:| -----------------------------------------------:|
-| Inversions Count MergeSort   | O(nlog(n))      | CountInversions.new.sort_count_inversion(array) |
-| Inversions Count Brute force | O(n²)           | Not implemented yet                             |
+| Algorithm                    | time complexity | Implementation                            |
+| ---------------------------- |:---------------:| -----------------------------------------:|
+| Inversions Count MergeSort   | O(nlog(n))      | CountInversions.new.sort_and_count(array) |
+| Inversions Count Brute force | O(n²)           | Not implemented yet                       |
 
 
 ## Matrix multiplication
