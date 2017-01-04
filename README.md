@@ -15,7 +15,7 @@ Dependencies:
 
 ## The sorting problem
 
-The problem is to find a way to order an array of integers
+The problem is to order an array of integers
 
 | Algorithm      | time complexity | Implementation                |
 | -------------- |:---------------:| -----------------------------:|
@@ -24,7 +24,7 @@ The problem is to find a way to order an array of integers
 | Bubble sort    | O(n²)           | BubbleSort.new.sort(array)    |
 | Merge sort     | O(nlog(n))      | MergeSort.new.sort(array)     |
 
-## Benchmarking
+### Sorting Algorithm´s Benchmark
 
 To compare the 4 algorithms benchmarking execute:
 
@@ -35,34 +35,31 @@ This also will generate a graphic `sorting_algorithms.png`
 ![alt tag](https://github.com/TOAST3R/sorting_algorithms/blob/master/sorting_algorithms.png)
 
 
-## Algorithm to count inversions
+## Count inversions problem
 
-The problem is to compute the number of inversions in the given array.
+The problem is to compute the number of inversions in the given array of integers.
 
-Given an array A containing 1..n in some arbritrary order
-
-DEF: Number of inversions: 
 ```
+Given an array A containing 1..n in some arbritrary order
+DEF: Number of inversions: 
 Number of pairs (i,j) of indices with i< j and A(j) < A(i)
 ```
 
-Largest-possible number of inversions of an n size array: 
-```
-n(n-1)/2.
-```
+Largest-possible number of inversions of an n size array: n(n-1)/2.
 
 Brute force: O(n²) time
+
+We should use fast divide-and-conquer algorithm. Versioning MergeSort to count the times were there is a term inverted.
 
 left:       i,j < =n/2 ∀ inversions C(i,j) (with i < j)  
 right:      i,j > n/2  ∀ inversions C(i,j) (with i < j)  
 split:   i <= n/2 <= j ∀ inversions C(i,j) (with i < j)  
 
-We should use fast divide-and-conquer algorithm. Versioning MergeSort to count the times were there is a term inverted.
-
 | Algorithm                    | time complexity | Implementation                                  |
 | ---------------------------- |:---------------:| -----------------------------------------------:|
 | Inversions Count MergeSort   | O(nlog(n))      | CountInversions.new.sort_count_inversion(array) |
 | Inversions Count Brute force | O(n²)           | Not implemented yet                             |
+
 
 ## Matrix multiplication
 
