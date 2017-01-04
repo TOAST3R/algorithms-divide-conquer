@@ -8,19 +8,21 @@ Dependencies:
 
 ## Integer multiplication
 
-Algorithm                             | time complexity | Implementation
-GradeSchool integer multiplication    | O(n²)           | Not implemented yet
-Gauss recursive integer multiplication| O(n^log2(3))    | Not implemented yet
+| Algorithm                             | time complexity | Implementation      |
+| ------------------------------------- |:---------------:| -------------------:|
+| GradeSchool integer multiplication    | O(n²)           | Not implemented yet |
+| Gauss recursive integer multiplication| O(n^log2(3))    | Not implemented yet |
 
 ## The sorting problem
 
 The problem is to find a way to order an array of integers
 
-Algorithm      | time complexity | Implementation
-Selection sort | O(n²)           | SelectionSort.new.sort(array)
-Insertion sort | O(n²)           | InsertionSort.new.sort(array)
-Bubble sort    | O(n²)           | BubbleSort.new.sort(array)
-Merge sort     | O(nlog(n))      | MergeSort.new.sort(array)
+| Algorithm      | time complexity | Implementation                |
+| -------------- |:---------------:| -----------------------------:|
+| Selection sort | O(n²)           | SelectionSort.new.sort(array) |
+| Insertion sort | O(n²)           | InsertionSort.new.sort(array) |
+| Bubble sort    | O(n²)           | BubbleSort.new.sort(array)    |
+| Merge sort     | O(nlog(n))      | MergeSort.new.sort(array)     |
 
 ## Benchmarking
 
@@ -51,23 +53,25 @@ n(n-1)/2.
 
 Brute force: O(n²) time
 
-left:       i,j < =n/2 ∀ inversions C(i,j) (with i < j)
-right:      i,j > n/2  ∀ inversions C(i,j) (with i < j)
-split:   i <= n/2 <= j ∀ inversions C(i,j) (with i < j)
+left:       i,j < =n/2 ∀ inversions C(i,j) (with i < j)  
+right:      i,j > n/2  ∀ inversions C(i,j) (with i < j)  
+split:   i <= n/2 <= j ∀ inversions C(i,j) (with i < j)  
 
 We should use fast divide-and-conquer algorithm. Versioning MergeSort to count the times were there is a term inverted.
 
-Algorithm                    | time complexity | Implementation
-Inversions Count MergeSort   | O(nlog(n))      | CountInversions.new.sort_count_inversion(array)
-Inversions Count Brute force | O(n²)           | Not implemented yet
+| Algorithm                    | time complexity | Implementation                                  |
+| ---------------------------- |:---------------:| -----------------------------------------------:|
+| Inversions Count MergeSort   | O(nlog(n))      | CountInversions.new.sort_count_inversion(array) |
+| Inversions Count Brute force | O(n²)           | Not implemented yet                             |
 
 ## Matrix multiplication
 
 Strassen´s subcubic matrix multiplication algorithm (1969)
 
-Algorithm                         | time complexity | Implementation
-Naive Matrix multiplication       | O(n^3)          | Not implemented yet
-Strassen´s matrix multiplication  | O(n^2log(7))    | Not implemented yet
+| Algorithm                         | time complexity | Implementation      |
+| --------------------------------- |:---------------:| -------------------:|
+| Naive Matrix multiplication       | O(n^3)          | Not implemented yet |
+| Strassen´s matrix multiplication  | O(n^2log(7))    | Not implemented yet |
 
 
 
@@ -106,52 +110,52 @@ DEF: T(n) = o(f(n)) <=> ∀ c > 0, ∃ n0 > 0 such that T(n) < cf(n) ∀ n >= n0
 
 Recurrence Format
 
-1. Base Case : T(n) <= a constant for all sufficiently small n
-2. ∀ n : T(n) <= aT(n/b) + O(n^d)
+1. Base Case : T(n) <= a constant for all sufficiently small n  
+2. ∀ n : T(n) <= aT(n/b) + O(n^d)  
 
-where
-a = number of recursive calls (>= 1)
-b = input size shrinkage factor ( > 1)
+where:  
+a = number of recursive calls (>= 1)  
+b = input size shrinkage factor ( > 1)  
 d = exponent in running Fme of “combine step” (>=0) [a,b,d independent of n ]
 
-3 cases of Running time:
-T(n) = O(n^dlog(n)) if a = b^d (case 1) => the amount of work is the same each iteration
-     = O(n^d)       if a < b^d (case 2) => the amount of work is decreasing each iteration
+3 cases of Running time:  
+T(n) = O(n^dlog(n)) if a = b^d (case 1) => the amount of work is the same each iteration  
+     = O(n^d)       if a < b^d (case 2) => the amount of work is decreasing each iteration  
      = O(n^logb(a)) if a > b^d (case 3) => the amount of work is increasing each iteration
 
-Interpretation:
-a = rate of subproblem proliferation 
+Interpretation:  
+a = rate of subproblem proliferation  
 b^d = rate of work shrinkable (per subproblem)
 
 
 Examples:
 
-- MergeSort
-  a = 2
-  b = 2
+- MergeSort  
+  a = 2  
+  b = 2  
   d = 1 => case 1 (a = b^d) => T(n) <= O(nlog(n))
 
-- BinarySearch
-  a = 1
-  b = 2
+- BinarySearch  
+  a = 1  
+  b = 2  
   d = 0 => case 1 (a = b^d) => T(n) <= O(log(n))
 
-- Grade School integer multiplication
-  a = 4
-  b = 2
+- Grade School integer multiplication  
+  a = 4  
+  b = 2  
   d = 1 => case 3 (a > b^d) => T(n) = O(n^log2(4)) = O(n^2)
 
-- Gauss recursive integer multiplication
-  a = 3
-  b = 2
+- Gauss recursive integer multiplication  
+  a = 3  
+  b = 2  
   d = 1 => case 3 (a > b^d) => T(n) = O(n^log2(3)) <= O(n²) beats grade school
 
-- Strassen´s Matrix multiplication
-  a = 7
-  b = 2
+- Strassen´s Matrix multiplication  
+  a = 7  
+  b = 2  
   d = 2 => case 3 (a > b^d) => T(n) = O(n^log2(7)) <= O(n²) beats naive matrix multiplication
 
-- Ficticious recurrence
-  a = 2
-  b = 2
+- Ficticious recurrence  
+  a = 2  
+  b = 2  
   d = 2 => case 2 (a < b^d) => T(n) = O(n²)
