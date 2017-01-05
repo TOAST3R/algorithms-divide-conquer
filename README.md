@@ -127,7 +127,8 @@ a = number of recursive calls (>= 1)
 b = input size shrinkage factor ( > 1)  
 d = exponent in running Fme of “combine step” (>=0) [a,b,d independent of n ]
 
-3 cases of Running time:  
+3 cases of Running time:
+
 |T(n)             | case                | amount of work               |
 |:---------------:| -------------------:| ----------------------------:|
 | O(n^dlog(n))    | if a = b^d (case 1) | is the same each iteration   |
