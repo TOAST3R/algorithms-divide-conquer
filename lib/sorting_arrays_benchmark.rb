@@ -1,29 +1,29 @@
 require "benchmark"
 require "gruff"
 
-require_relative "./merge_sort"
-require_relative "./insertion_sort"
-require_relative "./bubble_sort"
-require_relative "./selection_sort"
+require_relative "./sorting/merge_sort"
+require_relative "./sorting/insertion_sort"
+require_relative "./sorting/bubble_sort"
+require_relative "./sorting/selection_sort"
 
   
 if __FILE__ == $0
   digit_lengths = {}
 
-  merge_sort_times = []
-  insertion_sort_times = []
-  bubble_sort_times = []
-  selection_sort_times = []
+  algorithms = [
+    Sorting::MergeSort.new, 
+    Sorting::InsertionSort.new, 
+    Sorting::BubbleSort.new, 
+    Sorting::SelectionSort.new
+  ]
+  algorithms_times = {}
   
-  merge_sort = MergeSort.new
-  insertion_sort = InsertionSort.new
-  bubble_sort = BubbleSort.new
-  selection_sort = SelectionSort.new
-  
-  printf "%-20s", "MergeSort"
-  printf "%-20s", "InsertionSort"
-  printf "%-20s", "BubbleSort"
-  printf "%-20s", "SelectionSort"
+  algorithms.each do |algorithm|
+    algorithm_name = algorithm.class.to_s.split("::")[1]
+    printf "%-20s", algorithm_name
+    algorithms_times[algorithm_name] = []
+  end
+
   printf "%-20s", "Digit length"
   puts
 
@@ -34,28 +34,22 @@ if __FILE__ == $0
     end
     array_size = array.to_s.length
     
-    merge_sort_times     << (Benchmark.realtime { merge_sort.sort array } * 1000).round(5)
-    insertion_sort_times << (Benchmark.realtime { insertion_sort.sort array } * 1000).round(5)
-    bubble_sort_times    << (Benchmark.realtime { bubble_sort.sort array } * 1000).round(5)
-    selection_sort_times << (Benchmark.realtime { selection_sort.sort array } * 1000).round(5)
-
-    digit_lengths[n] = array_size if n % 40 == 0
-    
-    printf "%-20s", merge_sort_times.last
-    printf "%-20s", insertion_sort_times.last
-    printf "%-20s", bubble_sort_times.last
-    printf "%-20s", selection_sort_times.last
+    algorithms.each do |algorithm|
+      algorithm_name = algorithm.class.to_s.split("::")[1]
+      algorithms_times[algorithm_name] << (Benchmark.realtime { algorithm.sort array } * 1000).round(5)
+      printf "%-20s", algorithms_times[algorithm_name].last
+    end
     printf "%-20s", array_size
-
     puts
+    
+    digit_lengths[n] = array_size if n % 40 == 0    
   end
 
   g = Gruff::Line.new
   g.title = "Array Int Sort Algorithms Benchmark"
   g.labels = digit_lengths
-  g.data :MergeSort, merge_sort_times
-  g.data :InsertionSort, insertion_sort_times
-  g.data :BubbleSort, bubble_sort_times
-  g.data :SelectionSort, selection_sort_times
-  g.write('sorting_algorithms.png')
+  algorithms_times.each do |algorithm_name, times|
+    g.data algorithm_name.to_sym, algorithms_times[algorithm_name]
+  end
+  g.write("#{algorithms_times.keys.join("_vs_")}.png")
 end

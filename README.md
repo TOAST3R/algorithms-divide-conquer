@@ -1,4 +1,4 @@
-# Divide and conquer algorithms
+# Divide and Conquer, Sorting and Searching, and Randomized Algorithms
 
 Course: https://www.coursera.org/learn/algorithms-divide-conquer
 
@@ -17,12 +17,12 @@ Dependencies:
 
 The problem is to order an array of integers
 
-| Algorithm      | time complexity | Implementation                |
-| -------------- |:---------------:| -----------------------------:|
-| Selection sort | O(n²)           | SelectionSort.new.sort(array) |
-| Insertion sort | O(n²)           | InsertionSort.new.sort(array) |
-| Bubble sort    | O(n²)           | BubbleSort.new.sort(array)    |
-| Merge sort     | O(nlog(n))      | MergeSort.new.sort(array)     |
+| Algorithm      | time complexity | Implementation                         |
+| -------------- |:---------------:| --------------------------------------:|
+| Selection sort | O(n²)           | Sorting::SelectionSort.new.sort(array) |
+| Insertion sort | O(n²)           | Sorting::InsertionSort.new.sort(array) |
+| Bubble sort    | O(n²)           | Sorting::BubbleSort.new.sort(array)    |
+| Merge sort     | O(nlog(n))      | Sorting::MergeSort.new.sort(array)     |
 
 ### Sorting Algorithm´s Benchmark
 
@@ -30,10 +30,17 @@ To compare the 4 algorithms benchmarking execute:
 
 `ruby sorting_arrays_benchmark.rb`
 
-This also will generate a graphic `sorting_algorithms.png`
+This also will generate a graphic comparison:
 
-![alt tag](https://github.com/TOAST3R/sorting_algorithms/blob/master/sorting_algorithms.png)
+MergeSort vs InsertionSort vs BubbleSort vs SelectionSort
 
+![alt tag](https://github.com/TOAST3R/sorting_algorithms/blob/master/MergeSort_vs_InsertionSort_vs_BubbleSort_vs_SelectionSort.png)
+
+InsertionSort vs SelectionSort
+![alt tag](https://github.com/TOAST3R/sorting_algorithms/blob/master/InsertionSort_vs_SelectionSort.png)
+
+MergeSort vs BubbleSort
+![alt tag](https://github.com/TOAST3R/sorting_algorithms/blob/master/MergeSort_vs_BubbleSort.png)
 
 ## Count inversions problem
 
@@ -69,6 +76,17 @@ Strassen´s subcubic matrix multiplication algorithm (1969)
 | --------------------------------- |:---------------:| -------------------:|
 | Naive Matrix multiplication       | O(n^3)          | Not implemented yet |
 | Strassen´s matrix multiplication  | O(n^2log(7))    | Not implemented yet |
+
+
+## QuickSort algorithm
+
+
+
+
+
+
+
+
 
 
 
@@ -156,3 +174,5 @@ Examples:
   a = 2  
   b = 2  
   d = 2 => case 2 (a < b^d) => T(n) = O(n²)
+
+
