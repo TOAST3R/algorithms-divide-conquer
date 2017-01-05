@@ -8,10 +8,10 @@ Dependencies:
 
 ## Integer multiplication
 
-| Algorithm                             | time complexity | Implementation      |
-| ------------------------------------- |:---------------:| -------------------:|
-| GradeSchool integer multiplication    | O(n²)           | Not implemented yet |
-| Gauss recursive integer multiplication| O(n^log2(3))    | Not implemented yet |
+| Algorithm                              | time complexity | Implementation      |
+| -------------------------------------- |:---------------:| -------------------:|
+| GradeSchool integer multiplication     | O(n²)           | Not implemented yet |
+| Karatsuba integer multiplication       | O(n^log2(3))    | Not implemented yet |
 
 ## The sorting problem
 
@@ -23,20 +23,6 @@ The problem is to order an array of integers
 | Insertion sort | O(n²)           | Sorting::InsertionSort.new.sort(array) |
 | Bubble sort    | O(n²)           | Sorting::BubbleSort.new.sort(array)    |
 | Merge sort     | O(nlog(n))      | Sorting::MergeSort.new.sort(array)     |
-
-### Sorting Algorithm´s Benchmark
-
-To compare the 4 algorithms benchmarking execute:
-
-`ruby sorting_arrays_benchmark.rb`
-
-This also will generate a graphic comparison:
-
-InsertionSort vs SelectionSort
-![alt tag](https://github.com/TOAST3R/sorting_algorithms/blob/master/InsertionSort_vs_SelectionSort.png)
-
-MergeSort vs BubbleSort
-![alt tag](https://github.com/TOAST3R/sorting_algorithms/blob/master/MergeSort_vs_BubbleSort.png)
 
 ## Count inversions problem
 
@@ -83,7 +69,19 @@ Strassen´s subcubic matrix multiplication algorithm (1969)
 
 
 
+# Benchmarking: Algorithm efficiency
 
+To compare the algorithms benchmarking execute:
+
+`ruby benchmark_algorithms.rb`
+
+This also will generate a graphic comparison, for example:
+
+InsertionSort vs SelectionSort
+![alt tag](https://github.com/TOAST3R/sorting_algorithms/blob/master/InsertionSort_vs_SelectionSort.png)
+
+MergeSort vs BubbleSort
+![alt tag](https://github.com/TOAST3R/sorting_algorithms/blob/master/MergeSort_vs_BubbleSort.png)
 
 
 # Appendix: Algorithm theory

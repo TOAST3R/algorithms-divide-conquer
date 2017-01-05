@@ -5,16 +5,13 @@ require_relative "./sorting/merge_sort"
 require_relative "./sorting/insertion_sort"
 require_relative "./sorting/bubble_sort"
 require_relative "./sorting/selection_sort"
-
   
 if __FILE__ == $0
   digit_lengths = {}
 
   algorithms = [
     Sorting::MergeSort.new, 
-    #Sorting::InsertionSort.new, 
-    Sorting::BubbleSort.new#, 
-    #Sorting::SelectionSort.new
+    Sorting::BubbleSort.new
   ]
   algorithms_times = {}
   
@@ -46,7 +43,7 @@ if __FILE__ == $0
   end
 
   g = Gruff::Line.new
-  g.title = "Array Int Sort Algorithms Benchmark"
+  g.title = "Algorithms Benchmarking"
   g.labels = digit_lengths
   algorithms_times.each do |algorithm_name, times|
     g.data algorithm_name.to_sym, algorithms_times[algorithm_name]
