@@ -128,10 +128,11 @@ b = input size shrinkage factor ( > 1)
 d = exponent in running Fme of “combine step” (>=0) [a,b,d independent of n ]
 
 3 cases of Running time:  
-| ---- |:---------------:| -------------------:| -----------------------------------------------:|
-| T(n) | O(n^dlog(n))    | if a = b^d (case 1) | the amount of work is the same each iteration   |
-|      | O(n^d)          | if a < b^d (case 2) | the amount of work is decreasing each iteration | 
-|      | O(n^logb(a))    | if a > b^d (case 3) | the amount of work is increasing each iteration |
+|T(n)             | case                | amount of work               |
+|:---------------:| -------------------:| ----------------------------:|
+| O(n^dlog(n))    | if a = b^d (case 1) | is the same each iteration   |
+| O(n^d)          | if a < b^d (case 2) | is decreasing each iteration | 
+| O(n^logb(a))    | if a > b^d (case 3) | is increasing each iteration |
 
 Interpretation:  
 a = rate of subproblem proliferation  
