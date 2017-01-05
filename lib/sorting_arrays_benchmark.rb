@@ -12,9 +12,9 @@ if __FILE__ == $0
 
   algorithms = [
     Sorting::MergeSort.new, 
-    Sorting::InsertionSort.new, 
-    Sorting::BubbleSort.new, 
-    Sorting::SelectionSort.new
+    #Sorting::InsertionSort.new, 
+    Sorting::BubbleSort.new#, 
+    #Sorting::SelectionSort.new
   ]
   algorithms_times = {}
   

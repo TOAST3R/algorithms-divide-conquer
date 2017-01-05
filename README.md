@@ -32,10 +32,6 @@ To compare the 4 algorithms benchmarking execute:
 
 This also will generate a graphic comparison:
 
-MergeSort vs InsertionSort vs BubbleSort vs SelectionSort
-
-![alt tag](https://github.com/TOAST3R/sorting_algorithms/blob/master/MergeSort_vs_InsertionSort_vs_BubbleSort_vs_SelectionSort.png)
-
 InsertionSort vs SelectionSort
 ![alt tag](https://github.com/TOAST3R/sorting_algorithms/blob/master/InsertionSort_vs_SelectionSort.png)
 
