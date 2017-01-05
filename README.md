@@ -5,17 +5,21 @@ Course: https://www.coursera.org/learn/algorithms-divide-conquer
 Dependencies:
 
 `gem install gruff`
-
+  
+  
 ## Integer multiplication
+
+The problem is multiplicate large integers
 
 | Algorithm                              | time complexity | Implementation      |
 | -------------------------------------- |:---------------:| -------------------:|
 | GradeSchool integer multiplication     | O(n²)           | Not implemented yet |
 | Karatsuba integer multiplication       | O(n^log2(3))    | Not implemented yet |
-
+  
+  
 ## The sorting problem
 
-The problem is to order an array of integers
+The problem is to order an array of size n unsorted integers.
 
 | Algorithm      | time complexity | Implementation                         |
 | -------------- |:---------------:| --------------------------------------:|
@@ -23,10 +27,11 @@ The problem is to order an array of integers
 | Insertion sort | O(n²)           | Sorting::InsertionSort.new.sort(array) |
 | Bubble sort    | O(n²)           | Sorting::BubbleSort.new.sort(array)    |
 | Merge sort     | O(nlog(n))      | Sorting::MergeSort.new.sort(array)     |
-
+  
+  
 ## Count inversions problem
 
-The problem is to compute the number of inversions in the given array of integers.
+The problem is to compute the number of inversions in the given array of integers. We will solve it with brute force in  O(n²) time. Largest-possible number of inversions of an n size array is n(n-1)/2.
 
 ```
 Given an array A containing 1..n in some arbritrary order
@@ -34,11 +39,7 @@ DEF: Number of inversions:
 Number of pairs (i,j) of indices with i< j and A(j) < A(i)
 ```
 
-Largest-possible number of inversions of an n size array: n(n-1)/2.
-
-Brute force: O(n²) time
-
-We should use fast divide-and-conquer algorithm. Versioning MergeSort to count the times were there is a term inverted.
+We should use fast divide-and-conquer algorithm. Versioning MergeSort to count the times were there is a term inverted. There are three cases:
 
 left:       i,j < =n/2 ∀ inversions C(i,j) (with i < j)  
 right:      i,j > n/2  ∀ inversions C(i,j) (with i < j)  
@@ -48,8 +49,8 @@ split:   i <= n/2 <= j ∀ inversions C(i,j) (with i < j)
 | ---------------------------- |:---------------:| -----------------------------------------:|
 | Inversions Count MergeSort   | O(nlog(n))      | CountInversions.new.sort_and_count(array) |
 | Inversions Count Brute force | O(n²)           | Not implemented yet                       |
-
-
+  
+  
 ## Matrix multiplication
 
 Strassen´s subcubic matrix multiplication algorithm (1969)
@@ -58,17 +59,14 @@ Strassen´s subcubic matrix multiplication algorithm (1969)
 | --------------------------------- |:---------------:| -------------------:|
 | Naive Matrix multiplication       | O(n^3)          | Not implemented yet |
 | Strassen´s matrix multiplication  | O(n^2log(7))    | Not implemented yet |
-
-
+  
+  
 ## QuickSort algorithm
-
-
-
-
-
-
-
-
+  
+    
+    
+    
+  
 # Benchmarking: Algorithm efficiency
 
 To compare the algorithms benchmarking execute:
@@ -82,8 +80,8 @@ InsertionSort vs SelectionSort
 
 MergeSort vs BubbleSort
 ![alt tag](https://github.com/TOAST3R/sorting_algorithms/blob/master/MergeSort_vs_BubbleSort.png)
-
-
+  
+  
 # Appendix: Algorithm theory
 
 ### Asymptotic Analysis
