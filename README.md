@@ -117,8 +117,10 @@ DEF: T(n) = o(f(n)) <=> ∀ c > 0, ∃ n0 > 0 such that T(n) < cf(n) ∀ n >= n0
 
 Recurrence Format
 
+```
 1. Base Case : T(n) <= a constant for all sufficiently small n  
 2. ∀ n : T(n) <= aT(n/b) + O(n^d)  
+```
 
 where:  
 a = number of recursive calls (>= 1)  
@@ -126,9 +128,10 @@ b = input size shrinkage factor ( > 1)
 d = exponent in running Fme of “combine step” (>=0) [a,b,d independent of n ]
 
 3 cases of Running time:  
-T(n) = O(n^dlog(n)) if a = b^d (case 1) => the amount of work is the same each iteration  
-     = O(n^d)       if a < b^d (case 2) => the amount of work is decreasing each iteration  
-     = O(n^logb(a)) if a > b^d (case 3) => the amount of work is increasing each iteration
+| ---- |:---------------:| -------------------:| -----------------------------------------------:|
+| T(n) | O(n^dlog(n))    | if a = b^d (case 1) | the amount of work is the same each iteration   |
+|      | O(n^d)          | if a < b^d (case 2) | the amount of work is decreasing each iteration | 
+|      | O(n^logb(a))    | if a > b^d (case 3) | the amount of work is increasing each iteration |
 
 Interpretation:  
 a = rate of subproblem proliferation  
