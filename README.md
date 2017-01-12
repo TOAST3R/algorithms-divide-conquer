@@ -1,4 +1,4 @@
-# Divide and Conquer, Sorting and Searching, and Randomized Algorithms
+# Divide and Conquer, Sorting, Searching, and Randomized Algorithms
 
 Course: https://www.coursera.org/learn/algorithms-divide-conquer
 
@@ -21,12 +21,13 @@ The problem is multiplicate large integers
 
 The problem is to order an array of size n unsorted integers.
 
-| Algorithm      | time complexity | Implementation                         |
-| -------------- |:---------------:| --------------------------------------:|
-| Selection sort | O(n²)           | Sorting::SelectionSort.new.sort(array) |
-| Insertion sort | O(n²)           | Sorting::InsertionSort.new.sort(array) |
-| Bubble sort    | O(n²)           | Sorting::BubbleSort.new.sort(array)    |
-| Merge sort     | O(nlog(n))      | Sorting::MergeSort.new.sort(array)     |
+| Algorithm      | time complexity | Implementation                                    |
+| -------------- |:---------------:| -------------------------------------------------:|
+| Selection sort | O(n²)           | Sorting::SelectionSort.new.sort(array)            |
+| Insertion sort | O(n²)           | Sorting::InsertionSort.new.sort(array)            |
+| Bubble sort    | O(n²)           | Sorting::BubbleSort.new.sort(array)               |
+| Merge sort     | O(nlog(n))      | Sorting::MergeSort.new.sort(array)                |
+| Quick sort     | O(nlog(n))      | Sorting::QuickSort.new.sort(array, lambda{|x| 0}) |
   
   
 ## Count inversions problem
@@ -61,24 +62,20 @@ Strassen´s subcubic matrix multiplication algorithm (1969)
 | Strassen´s matrix multiplication  | O(n^2log(7))    | Not implemented yet |
   
   
-## QuickSort algorithm
-  
-    
-    
-    
   
 # Benchmarking: Algorithm efficiency
 
 To compare the algorithms benchmarking execute:
-
 `ruby benchmark_algorithms.rb`
 
 This also will generate a graphic comparison, for example:
 
-InsertionSort vs SelectionSort
+### InsertionSort vs SelectionSort
+
 ![alt tag](https://github.com/TOAST3R/sorting_algorithms/blob/master/InsertionSort_vs_SelectionSort.png)
 
-MergeSort vs BubbleSort
+### MergeSort vs BubbleSort
+
 ![alt tag](https://github.com/TOAST3R/sorting_algorithms/blob/master/MergeSort_vs_BubbleSort.png)
   
   
